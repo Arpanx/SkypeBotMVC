@@ -12,14 +12,6 @@ namespace SKYPE.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly IBotService _botService;
-
-        public HomeController(IBotService botService)
-        {
-            _botService = botService;
-        }
-
-
         [HttpGet]
         public IActionResult Create1()
         {

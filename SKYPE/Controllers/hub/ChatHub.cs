@@ -24,7 +24,7 @@ namespace SKYPE.Controllers.hub
             }
         }
 
-        public async Task SetSkypeLogin(string skypeLogin, string userName)
+        public void SetSkypeLogin(string skypeLogin, string userName)
         {
             _botService.SetSkypeLogin(skypeLogin);
         }
