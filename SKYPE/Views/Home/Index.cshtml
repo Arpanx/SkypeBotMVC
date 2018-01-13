@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>SignalR Chat</title>
+</head>
+<body>  
+    <div id="loginBlock">
+        Enter SKYPE login of the recipient:<br />
+        <input id="userSkypeLogin" type="text" />
+        <input id="sendSkypeLoginBtn" type="button" value="Set" />
+    </div><br />
+    
+    <div id="header"></div><br />
+
+    <div id="inputForm">
+        <input type="text" id="message" />
+        <input type="button" id="sendBtn" value="Send" />
+    </div>
+    <div id="chatroom"></div>
+
+    <span class="skype-button bubble " data-bot-id="505b3669-e6be-49cd-8877-60c5525a2ccc"></span>
+    <script src="https://swc.cdn.skype.com/sdk/v1/sdk.min.js"></script>
+
+
+    <script src="js/signalr-client-1.0.0-alpha2-final.js"></script>
+    <script>
+        let hubUrl = 'http://localhost:52901/chat';
+        let httpConnection = new signalR.HttpConnection(hubUrl);
+        let hubConnection = new signalR.HubConnection(httpConnection);
+        let userName = 'Bot';
+        document.getElementById("header").innerHTML = '<h3>Welcome ' + 'Bot' + '</h3>';
+        // Receiving a message from the server
+        hubConnection.on('Send', function (message, userName) {
+
+            // create the <b> element for the username
+            let userNameElem = document.createElement("b");
+            userNameElem.appendChild(document.createTextNode(userName + ': '));
+
+            // creates a <p> element for a user message
+            let elem = document.createElement("p");
+            elem.appendChild(userNameElem);
+            elem.appendChild(document.createTextNode(message));
+
+            var firstElem = document.getElementById("chatroom").firstChild;
+            document.getElementById("chatroom").insertBefore(elem, firstElem);
+
+        });
+
+        // set Skype login
+        document.getElementById("sendSkypeLoginBtn").addEventListener("click", function (e) {
+            let userSkypeLogin = document.getElementById("userSkypeLogin").value;
+            hubConnection.invoke('SetSkypeLogin', userSkypeLogin, "Bot");
+            document.getElementById("header").innerHTML = '<h3>Send message to: ' + userSkypeLogin + '</h3>';
+        });
+
+        // sending a message to the server
+        document.getElementById("sendBtn").addEventListener("click", function (e) {
+            let message = document.getElementById("message").value;
+            hubConnection.invoke('Send', message, "Bot");
+        });
+
+        hubConnection.start();
+    </script>
+</body>
+</html>
