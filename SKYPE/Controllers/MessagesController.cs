@@ -16,7 +16,8 @@ namespace SKYPE.Controllers
     {
         private readonly IBotService _botService;
 
-        public MessagesController(IBotService botService)
+        public MessagesController(
+            IBotService botService)
         {
             _botService = botService;
         }

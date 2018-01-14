@@ -17,7 +17,8 @@ namespace SKYPE.Services
         private readonly IConfiguration configuration;
         protected static string _skypeLogin = "do230379pav";
 
-        public BotService(IConfiguration configuration)
+        public BotService(
+            IConfiguration configuration)
         {
             this.configuration = configuration;
         }
