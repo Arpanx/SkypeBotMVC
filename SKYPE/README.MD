@@ -13,3 +13,6 @@ https://dev.botframework.com/bots?id=Arpanx4
 
 6) Set the Skype login in the top field and press the Set button
 Now you can write a message and send the user whom you specified, you can exchange messages and see a dialog
+
+https://ngrok.com/ need for proxy
+ngrok http -host-header=rewrite 52901 
