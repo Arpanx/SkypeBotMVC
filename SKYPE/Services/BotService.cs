@@ -36,6 +36,7 @@ namespace SKYPE.Services
 
         public async void SendToSkype(string txtMessage)
         {
+            MicrosoftAppCredentials.TrustServiceUrl("https://smba.trafficmanager.net/apis/", DateTime.MaxValue);
             MicrosoftAppCredentials appCredentials = new MicrosoftAppCredentials(this.configuration);
             var connector = new ConnectorClient(new Uri("https://smba.trafficmanager.net/apis/"), appCredentials);
             
