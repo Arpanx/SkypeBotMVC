@@ -47,5 +47,6 @@ In the preview mode it works great
 12) Set the Skype login in the top field and press the Set button
 Now you can write a message and send the user whom you specified, you can exchange messages and see a dialog
 
-
-
+13) I used examples from the documentation, SO, GitHub Issue
+ https://docs.microsoft.com/en-us/bot-framework/
+ https://github.com/Microsoft/BotBuilder
