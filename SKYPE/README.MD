@@ -1,4 +1,6 @@
 # SkypeBotMVC ASP.NET Core SinglaiR  MS Bot Skype
+Demo video https://www.youtube.com/watch?v=npWNxS_Dnv0
+
 1) git clone https://github.com/Arpanx/SkypeBotMVC.git
 2) cd SKYPE/
 3) dotnet  build
