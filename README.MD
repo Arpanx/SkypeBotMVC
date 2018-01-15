@@ -1,4 +1,4 @@
-# SkypeBotMVC ASP.NET Core SignalR  MS Bot SKYPE
+﻿# SkypeBotMVC ASP.NET Core SignalR  MS Bot SKYPE
 
 Demo video https://www.youtube.com/watch?v=npWNxS_Dnv0
 
@@ -14,6 +14,9 @@ https://ngrok.com/download  ngrok.exe need for proxy
 download this file and run by specifying such parameters on the command line
 
 ngrok.exe http -host-header=rewrite 52901
+The program must be running and accessible via HTTPS on the Internet
+Bot expects the program to be accessible at  https://1277d8e6.ngrok.io/api/messages
+(Set your current address where the program is available)
 
 ![Alt text](https://github.com/Arpanx/SkypeBotMVC/blob/master/SKYPE/docs/1.jpg "ngrok")
 
@@ -23,14 +26,25 @@ ngrok.exe http -host-header=rewrite 52901
 ![Alt text](https://github.com/Arpanx/SkypeBotMVC/blob/master/SKYPE/docs/2.jpg "Edit BotName")
 7) Create AppID & password
 ![Alt text](https://github.com/Arpanx/SkypeBotMVC/blob/master/SKYPE/docs/3.jpg "Create AppID & password")
+8) Finish registration
+![Alt text](https://github.com/Arpanx/SkypeBotMVC/blob/master/SKYPE/docs/4.jpg "Finish")
+9) add a Skype messenger
+![Alt text](https://github.com/Arpanx/SkypeBotMVC/blob/master/SKYPE/docs/5.jpg "add a Skype")
+10) We go to the messaging tab, we look that the message is allowed to be sent.
+!! It's important not to publish Bot. (While he will wait for confirmation of publication, will not work.)
+In the preview mode it works great
+![Alt text](https://github.com/Arpanx/SkypeBotMVC/blob/master/SKYPE/docs/6.jpg "Finish")
 
-8) Add into Skype contacts  https://join.skype.com/bot/505b3669-e6be-49cd-8877-60c5525a2ccc
-The program must be running and accessible via HTTPS on the Internet
-Bot expects the program to be accessible at https://1277d8e6.ngrok.io/api/messages 
-If the address is different, you need to change it in the bot settings.
-https://dev.botframework.com/bots?id=Arpanx4
+11) Add into Skype contacts  https://join.skype.com/bot/xxxxxxxxx-e6be-49xx-8xx7-60xxxxx5a2ccc   <- your App ID
 
-9) Set the Skype login in the top field and press the Set button
+12) Сheck you appsetting.json
+
+"MicrosoftAppId": "50.......9-e6be-49cd-8877-6......2ccc",
+  "MicrosoftAppPassword": "arkEW7........G005*{",
+  "SkypeApiURL": "https://smba.trafficmanager.net/apis/",
+  "LocalHubSignalrURL": "http://localhost:52901/chat"
+
+12) Set the Skype login in the top field and press the Set button
 Now you can write a message and send the user whom you specified, you can exchange messages and see a dialog
 
 
