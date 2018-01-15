@@ -44,9 +44,9 @@ In the preview mode it works great
   "SkypeApiURL": "https://smba.trafficmanager.net/apis/",
   "LocalHubSignalrURL": "http://localhost:52901/chat"
 
-12) Set the Skype login in the top field and press the Set button
+13) Set the Skype login in the top field and press the Set button
 Now you can write a message and send the user whom you specified, you can exchange messages and see a dialog
 
-13) I used examples from the documentation, SO, GitHub Issue
+14) I used examples from the documentation, SO, GitHub Issue
  https://docs.microsoft.com/en-us/bot-framework/
  https://github.com/Microsoft/BotBuilder
