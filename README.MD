@@ -15,7 +15,7 @@ download this file and run by specifying such parameters on the command line
 
 ngrok.exe http -host-header=rewrite 52901
 
-![Alt text](/SkypeBotMVC/blob/master/SKYPE/docs/1.jpg?raw=true "ngrok")
+![Alt text](https://github.com/Arpanx/SkypeBotMVC/blob/master/SKYPE/docs/1.jpg "ngrok")
 
 5) Add into Skype contacts  https://join.skype.com/bot/505b3669-e6be-49cd-8877-60c5525a2ccc
 The program must be running and accessible via HTTPS on the Internet
