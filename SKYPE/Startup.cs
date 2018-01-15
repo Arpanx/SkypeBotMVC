@@ -35,6 +35,9 @@ namespace SKYPE
 
             var credentialProvider = new StaticCredentialProvider(Configuration.GetSection(MicrosoftAppCredentials.MicrosoftAppIdKey)?.Value,
                 Configuration.GetSection(MicrosoftAppCredentials.MicrosoftAppPasswordKey)?.Value);
+                Configuration.GetSection(Configuration["SkypeApiURL"]);
+                Configuration.GetSection(Configuration["LocalHubSignalrURL"]);
+            
 
             services.AddAuthentication(
                     // This can be removed after https://github.com/aspnet/IISIntegration/issues/371

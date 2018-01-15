@@ -1,4 +1,4 @@
-# SkypeBotMVC ASP.NET Core SinglaiR  MS Bot SKYPE
+# SkypeBotMVC ASP.NET Core SignalR  MS Bot SKYPE
 
 Demo video https://www.youtube.com/watch?v=npWNxS_Dnv0
 

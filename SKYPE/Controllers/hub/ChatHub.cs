@@ -19,8 +19,9 @@ namespace SKYPE.Controllers.hub
         public async Task Send(string message, string userName)
         {
             await Clients.All.InvokeAsync("Send", message, userName);
-            if (userName == "Bot") { 
-              _botService.SendToSkype(message);
+            if (userName == "Bot")
+            { 
+                _botService.SendToSkype(message);
             }
         }
 

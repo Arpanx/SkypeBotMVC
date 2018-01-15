@@ -12,12 +12,6 @@ namespace SKYPE.Controllers
 {
     public class HomeController : Controller
     {
-        [HttpGet]
-        public IActionResult Create1()
-        {
-            return View();
-        }
-
         public IActionResult Index()
         {
             return View();

@@ -15,7 +15,7 @@ namespace SKYPE.Services
     public class BotService : IBotService
     {
         private readonly IConfiguration configuration;
-        protected static string _skypeLogin = "do230379pav";
+        protected static string _skypeLogin;
 
         public BotService(
             IConfiguration configuration)
@@ -25,7 +25,7 @@ namespace SKYPE.Services
 
         public async void Send(Activity activity)
         { 
-            var baseUrl = "http://localhost:52901/chat";
+            var baseUrl = this.configuration.GetSection("LocalHubSignalrURL").Get<string>();
             var connection = new HubConnectionBuilder()
                 .WithUrl(baseUrl)
                 .WithConsoleLogger()
@@ -36,31 +36,37 @@ namespace SKYPE.Services
         }
 
         public async void SendToSkype(string txtMessage)
-        {
-            MicrosoftAppCredentials.TrustServiceUrl("https://smba.trafficmanager.net/apis/", DateTime.MaxValue);
-            MicrosoftAppCredentials appCredentials = new MicrosoftAppCredentials(this.configuration);
-            var connector = new ConnectorClient(new Uri("https://smba.trafficmanager.net/apis/"), appCredentials);
+        {            
+            string _skypeApiURL = this.configuration.GetSection("SkypeApiURL").Get<string>();
             
-            IMessageActivity messagenew = Activity.CreateMessageActivity();
+            MicrosoftAppCredentials.TrustServiceUrl(_skypeApiURL, DateTime.MaxValue);
+            MicrosoftAppCredentials appCredentials = new MicrosoftAppCredentials(this.configuration);
+            var connector = new ConnectorClient(new Uri(_skypeApiURL), appCredentials);
+            
+            IMessageActivity messageNew = Activity.CreateMessageActivity();
 
             try 
-            { 
-                var conversationId = "8:" + _skypeLogin.Trim().ToLower();
-                messagenew.Conversation = new ConversationAccount(isGroup: false, id: conversationId);
-                messagenew.Text = txtMessage.ToString();
-                messagenew.Locale = "en-Us";
-                await connector.Conversations.SendToConversationAsync((Activity)messagenew);
+            {
+                if (_skypeLogin == null)
+                {
+                    throw new System.ArgumentException("Skype login cannot be null", "_skypeLogin");
+                }
+                var conversationId = "8:" + _skypeLogin?.Trim().ToLower();
+                messageNew.Conversation = new ConversationAccount(isGroup: false, id: conversationId);
+                messageNew.Text = txtMessage.ToString();
+                messageNew.Locale = "en-Us";
+                await connector.Conversations.SendToConversationAsync((Activity)messageNew);
             }
             catch (Exception e)
             {
-                var baseUrl = "http://localhost:52901/chat";
+                var baseUrl = this.configuration.GetSection("LocalHubSignalrURL").Get<string>();
                 var connection = new HubConnectionBuilder()
                     .WithUrl(baseUrl)
                     .WithConsoleLogger()
                     .Build();
 
                 await connection.StartAsync();
-                await connection.InvokeAsync<ChatHub>("Send", "Error: " + e.InnerException, "Bot");
+                await connection.InvokeAsync<ChatHub>("Send", e.Message, "Error ");
             }
         }
 
