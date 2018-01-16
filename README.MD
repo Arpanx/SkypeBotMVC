@@ -25,15 +25,15 @@ Bot expects the program to be accessible at  https://1277d8e6.ngrok.io/api/messa
 6) The name is any convenient (not important)
 ![Alt text](https://github.com/Arpanx/SkypeBotMVC/blob/master/docs/2.jpg "Edit BotName")
 7) Create AppID & password
-![Alt text](https://github.com/Arpanx/SkypeBotMVC/blob/master/SKYPE/docs/3.jpg "Create AppID & password")
+![Alt text](https://github.com/Arpanx/SkypeBotMVC/blob/master/docs/3.jpg "Create AppID & password")
 8) Finish registration
-![Alt text](https://github.com/Arpanx/SkypeBotMVC/blob/master/SKYPE/docs/4.jpg "Finish")
+![Alt text](https://github.com/Arpanx/SkypeBotMVC/blob/master/docs/4.jpg "Finish")
 9) add a Skype messenger
-![Alt text](https://github.com/Arpanx/SkypeBotMVC/blob/master/SKYPE/docs/5.jpg "add a Skype")
+![Alt text](https://github.com/Arpanx/SkypeBotMVC/blob/master/docs/5.jpg "add a Skype")
 10) We go to the messaging tab, we look that the message is allowed to be sent.
 !! It's important not to publish Bot. (While he will wait for confirmation of publication, will not work.)
 In the preview mode it works great
-![Alt text](https://github.com/Arpanx/SkypeBotMVC/blob/master/SKYPE/docs/6.jpg "Finish")
+![Alt text](https://github.com/Arpanx/SkypeBotMVC/blob/master/docs/6.jpg "Finish")
 
 11) Add into Skype contacts  https://join.skype.com/bot/xxxxxxxxx-e6be-49xx-8xx7-60xxxxx5a2ccc   <- your App ID
 
