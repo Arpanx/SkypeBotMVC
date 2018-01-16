@@ -18,12 +18,12 @@ The program must be running and accessible via HTTPS on the Internet
 Bot expects the program to be accessible at  https://1277d8e6.ngrok.io/api/messages
 (Set your current address where the program is available)
 
-![Alt text](https://github.com/Arpanx/SkypeBotMVC/blob/master/SKYPE/docs/1.jpg "ngrok")
+![Alt text](https://github.com/Arpanx/SkypeBotMVC/blob/master/docs/1.jpg "ngrok")
 
 # It is necessary to create an MS Bot account
 5)  https://dev.botframework.com/bots/new
 6) The name is any convenient (not important)
-![Alt text](https://github.com/Arpanx/SkypeBotMVC/blob/master/SKYPE/docs/2.jpg "Edit BotName")
+![Alt text](https://github.com/Arpanx/SkypeBotMVC/blob/master/docs/2.jpg "Edit BotName")
 7) Create AppID & password
 ![Alt text](https://github.com/Arpanx/SkypeBotMVC/blob/master/SKYPE/docs/3.jpg "Create AppID & password")
 8) Finish registration

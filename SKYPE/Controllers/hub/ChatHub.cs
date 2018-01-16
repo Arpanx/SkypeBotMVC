@@ -18,15 +18,14 @@ namespace SKYPE.Controllers.hub
 
         public async Task Send(string message, string userName)
         {
+            await Clients.All.InvokeAsync("Send", message, userName);
             if (userName == "Bot")
             {
                 _botService.SendToSkype(message);
-            }
-
-            await Clients.All.InvokeAsync("Send", message, userName);
+            }            
         }
 
-        public void SetSkypeLogin(string skypeLogin)
+        public void SetSkypeLogin(string skypeLogin, string userName)
         {
             _botService.SetSkypeLogin(skypeLogin);
         }
