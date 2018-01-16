@@ -50,3 +50,6 @@ Now you can write a message and send the user whom you specified, you can exchan
 14) I used examples from the documentation, SO, GitHub Issue
  https://docs.microsoft.com/en-us/bot-framework/
  https://github.com/Microsoft/BotBuilder
+
+15) You can enable communication between your bot and your own client application by using the Direct Line API
+ https://docs.microsoft.com/en-us/bot-framework/rest-api/bot-framework-rest-direct-line-3-0-concepts
